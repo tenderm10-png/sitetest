@@ -1241,6 +1241,179 @@ section {
     margin: 0;
 }
 
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        max-width: 250px;
+        font-size: 0.9rem;
+    }
+    
+    .search-btn {
+        padding: 8px;
+    }
+    
+    /* Product cards mobile optimization */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-card {
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .product-name {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .product-price {
+        font-size: 1.1rem;
+    }
+    
+    .buy-now-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Catalog specific */
+    .catalog-title {
+        font-size: 2rem;
+    }
+    
+    .catalog-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Products carousel mobile */
+    .products-container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .product-item {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    
+    .carousel-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .header {
+        padding: 10px 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .nav ul {
+        gap: 10px;
+    }
+    
+    .nav a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+    
+    .search-bar input {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+    
+    .product-card {
+        max-width: 100%;
+    }
+    
+    .product-image {
+        height: 180px;
+    }
+    
+    .product-name {
+        font-size: 0.95rem;
+    }
+    
+    .product-price {
+        font-size: 1rem;
+    }
+    
+    .buy-now-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .catalog-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Products carousel small mobile */
+    .product-item {
+        flex: 0 0 250px;
+    }
+}
+
 /* Responsive Design for Contact Page */
 @media (max-width: 768px) {
     .contact-title {

@@ -65,6 +65,86 @@
         width: 100%;
         max-width: 200px;
     }
+    
+    /* Catalog mobile optimization */
+    .catalog-header {
+        padding: 120px 0 60px;
+    }
+    
+    .catalog-title {
+        font-size: 2.5rem;
+    }
+    
+    .catalog-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .product-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .product-image {
+        height: 220px;
+    }
+    
+    .product-name {
+        font-size: 1.1rem;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+    }
+    
+    .buy-now-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-header {
+        padding: 100px 0 50px;
+    }
+    
+    .catalog-title {
+        font-size: 2rem;
+    }
+    
+    .catalog-subtitle {
+        font-size: 1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-card {
+        max-width: 100%;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-name {
+        font-size: 1rem;
+    }
+    
+    .product-price {
+        font-size: 1.1rem;
+    }
+    
+    .buy-now-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Catalog Header */
