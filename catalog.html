@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Вікна двері міжкімнатні</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="catalog-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">Вікна двері</a></h1>
+                    <span class="logo-subtitle">Вікна Двері Style DOORS</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html" class="active">Каталог</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Пошук товарів..." id="catalog-search">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Header -->
+    <section class="catalog-header">
+        <div class="container">
+            <div class="catalog-intro">
+                <h1 class="catalog-title">Каталог товарів</h1>
+                <p class="catalog-subtitle">Оберіть ідеальні двері та вікна для вашого дому</p>
+                <div class="catalog-breadcrumb">
+                    <a href="index.html">Головна</a> / <span>Каталог</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="catalog-main">
+        <div class="container">
+            <!-- Main Catalog Content -->
+            <main class="catalog-content-full">
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Product Item 1 -->
+                    <div class="product-card" data-category="interior-doors" data-material="wood" data-color="white" data-price="1860">
+                        <div class="product-image">
+                            <img src="assets/Dvery1.PNG" alt="Двері DENVER">
+                            <div class="product-badge">Новинка</div>
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Двері міжкімнатні DENVER</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(12)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">Натуральне дерево</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Екологічний лак</span>
+                                <span class="feature">Звукоізоляція</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">78 120 ₴</div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 2 -->
+                    <div class="product-card" data-category="interior-doors" data-material="mdf" data-color="black" data-price="1240">
+                        <div class="product-image">
+                            <img src="assets/Dvery2.PNG" alt="Двері CLASSIC">
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Двері міжкімнатні CLASSIC</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(25)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">МДФ</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Сучасний дизайн</span>
+                                <span class="feature">Легке встановлення</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">52 080 ₴</div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 3 -->
+                    <div class="product-card" data-category="sliding-doors" data-material="metal" data-color="white" data-price="2840">
+                        <div class="product-image">
+                            <img src="assets/Dvery3.PNG" alt="Розсувні двері">
+                            <div class="product-badge sale">Знижка</div>
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Розсувні двері MODERN SLIDE</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(8)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">Метало-дерев'яний</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Економія простору</span>
+                                <span class="feature">Тихі механізми</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <span class="old-price">134 400 ₴</span>
+                                    <span class="current-price">119 280 ₴</span>
+                                </div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More products... -->
+                    <div class="product-card" data-category="entrance-doors" data-material="metal" data-color="black" data-price="3400">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400/000022/FFFFFF?text=ENTRANCE" alt="Вхідні двері">
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Вхідні двері SECURE</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(32)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">Метал + декоративні панелі</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Підвищена безпека</span>
+                                <span class="feature">Теплоізоляція</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">142 800 ₴</div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="windows" data-material="wood" data-color="oak" data-price="2100">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400/F0E68C/2F4F4F?text=WINDOW" alt="Вікна дерев'яні">
+                            <div class="product-badge">Популярний</div>
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Вікна дерев'яні ECO</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(18)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">Дуб</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Екологічно</span>
+                                <span class="feature">Теплоізоляція</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">88 200 ₴</div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="interior-doors" data-material="glass" data-color="white" data-price="1580">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400/F0F8FF/4169E1?text=GLASS" alt="Двері скляні">
+                            <div class="product-overlay">
+                                <button class="quick-view">Швидкий перегляд</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Двері скляні PANORAMA</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(14)</span>
+                            </div>
+                            <div class="product-material">
+                                <span class="material-label">Матеріал:</span>
+                                <span class="material-value">Загартоване скло</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">Збільшує простір</span>
+                                <span class="feature">Легке миття</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">66 360 ₴</div>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MS Doors</h4>
+                    <p>Якісні двері та вікна для вашого дому</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 222 11 02</p>
+                    <p>Email: kobelenko@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Адреса</h4>
+                    <p>вул. Калініна, 63</p>
+                    <p>Олександрія, Кіровоградська область, 28000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="order-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Оформити замовлення</h2>
+                <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="order-form" id="orderForm">
+                    <div class="form-section">
+                        <h3>Контактна інформація</h3>
+                        <div class="contact-with-product">
+                            <div class="product-info-small">
+                                <div class="product-image-small">
+                                    <img id="modalProductImage" src="" alt="">
+                                </div>
+                                <div class="product-details-small">
+                                    <h4 id="modalProductName"></h4>
+                                    <p id="modalProductPrice"></p>
+                                </div>
+                            </div>
+                            <div class="contact-fields">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="customerName">Ім'я *</label>
+                                        <input type="text" id="customerName" name="customerName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerPhone">Телефон *</label>
+                                        <input type="tel" id="customerPhone" name="customerPhone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="customerEmail">Email</label>
+                                    <input type="email" id="customerEmail" name="customerEmail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Спосіб доставки</h3>
+                        <div class="delivery-options">
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="pickup" checked>
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 7H21L19 21H5L3 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M8 21V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16 21V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h4>Самовивіз</h4>
+                                        <p>вул. Калініна, 63, Олександрія</p>
+                                        <span class="delivery-price">Безкоштовно</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="courier">
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 3H5L7.68 14.39C7.77 14.7 8.06 14.94 8.38 14.94H17.5C17.78 14.94 18.05 14.74 18.13 14.47L21 5H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="8.5" cy="20.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="19.5" cy="20.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h4>Кур'єром</h4>
+                                        <p>По Олександрії та області</p>
+                                        <span class="delivery-price">200 ₴</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="post">
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h4>Нова Пошта</h4>
+                                        <p>По всій Україні</p>
+                                        <span class="delivery-price">150 ₴</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="ukrpost">
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 22L13.09 15.74L22 15L13.09 14.26L12 8L10.91 14.26L2 15L10.91 15.74L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h4>Укрпошта</h4>
+                                        <p>Економна доставка</p>
+                                        <span class="delivery-price">80 ₴</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section" id="addressSection" style="display: none;">
+                        <h3>Адреса доставки</h3>
+                        <div class="form-group">
+                            <label for="deliveryAddress">Адреса *</label>
+                            <textarea id="deliveryAddress" name="deliveryAddress" rows="3" placeholder="Введіть повну адресу доставки"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Спосіб оплати</h3>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cash" checked>
+                                <div class="payment-card">
+                                    <div class="payment-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 4H3C1.9 4 1 4.9 1 6V18C1 19.1 1.9 20 3 20H21C22.1 20 23 19.1 23 18V6C23 4.9 22.1 4 21 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 10H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <span>Готівка</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <div class="payment-card">
+                                    <div class="payment-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 4H3C1.9 4 1 4.9 1 6V18C1 19.1 1.9 20 3 20H21C22.1 20 23 19.1 23 18V6C23 4.9 22.1 4 21 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 10H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <span>Картка</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Коментар до замовлення</h3>
+                        <div class="form-group">
+                            <textarea id="orderComment" name="orderComment" rows="3" placeholder="Додаткові побажання або коментарі"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>Товар:</span>
+                            <span id="summaryProductPrice"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Доставка:</span>
+                            <span id="summaryDeliveryPrice">Безкоштовно</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Всього:</span>
+                            <span id="summaryTotalPrice"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeOrderModal()">Скасувати</button>
+                        <button type="submit" class="submit-order-btn">Підтвердити замовлення</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="products-database.js"></script>
+    <script src="search-autocomplete.js"></script>
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>
+

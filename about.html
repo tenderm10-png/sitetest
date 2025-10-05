@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас - Вікна двері міжкімнатні</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">Вікна двері</a></h1>
+                    <span class="logo-subtitle">Вікна Двері Style DOORS</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Пошук товарів..." id="about-search">
+                    <button class="search-btn" onclick="performAboutSearch()">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Header -->
+    <section class="about-header">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-breadcrumb">
+                    <a href="index.html">Головна</a> / <span>Про нас</span>
+                </div>
+                <h1 class="about-title">Про нашу компанію</h1>
+                <p class="about-subtitle">Ми вже понад 15 років створюємо комфорт та стиль у ваших будинках</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+
+            <!-- Our Values -->
+            <div class="values-section">
+                <h2>Наші цінності</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🏆</div>
+                        <h3>Якість</h3>
+                        <p>Використовуємо тільки найкращі матеріали та сучасні технології виробництва для створення довговічної продукції.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Довіра</h3>
+                        <p>Прозорість у роботі, чесні ціни та виконання всіх зобов'язань перед клієнтами - основа нашого бізнесу.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <h3>Інновації</h3>
+                        <p>Постійно вдосконалюємо наші продукти та послуги, слідкуючи за найновішими тенденціями в галузі.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h3>Турбота</h3>
+                        <p>Кожен клієнт для нас особливий. Ми приділяємо увагу деталям та забезпечуємо індивідуальний підхід.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-section">
+                <h2>Наші досягнення</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">18+</div>
+                        <div class="stat-label">років на ринку</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3000+</div>
+                        <div class="stat-label">задоволених клієнтів</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">9000+</div>
+                        <div class="stat-label">встановлених дверей</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">позитивних відгуків</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Вікна двері</h4>
+                    <p>Якісні двері та вікна для вашого дому</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 222 11 02</p>
+                    <p>Email: kobelenko@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Адреса</h4>
+                    <p>вул. Калініна, 63</p>
+                    <p>Олександрія, Кіровоградська область, 28000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-database.js"></script>
+    <script src="search-autocomplete.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

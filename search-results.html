@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результати пошуку - Вікна двері</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .search-results-page {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+        }
+        
+        .search-header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        .search-title {
+            color: #ffd700;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-subtitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .search-query {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 25px;
+            padding: 15px 30px;
+            color: #ffd700;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .search-stats {
+            color: #cccccc;
+            font-size: 1rem;
+        }
+        
+        .search-results {
+            padding: 60px 0;
+            background: #1a1a1a;
+        }
+        
+        .results-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .result-card:hover {
+            border-color: #ffd700;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(255, 215, 0, 0.2);
+        }
+        
+        .result-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #333;
+        }
+        
+        .result-info {
+            padding: 25px;
+        }
+        
+        .result-name {
+            color: #ffd700;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .result-category {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .result-description {
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .result-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .result-feature {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .result-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .result-price {
+            color: #ffd700;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .result-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #ffd700;
+            font-size: 0.9rem;
+        }
+        
+        .result-btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .result-btn:hover {
+            background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #888;
+        }
+        
+        .no-results h3 {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .no-results p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .search-suggestions {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .search-suggestions h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        .suggestion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .suggestion-item {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        .suggestion-item:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-catalog {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-btn {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-btn:hover {
+            background: #ffd700;
+            color: #000;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .search-title {
+                font-size: 2rem;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .search-header {
+                padding: 100px 0 60px;
+            }
+        }
+    </style>
+</head>
+<body class="search-results-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">Вікна двері</a></h1>
+                    <span class="logo-subtitle">Вікна Двері Style DOORS</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Пошук товарів..." id="search-input">
+                    <button class="search-btn" onclick="performSearchFromResults()">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Header -->
+    <section class="search-header">
+        <div class="container">
+            <h1 class="search-title">Результати пошуку</h1>
+            <p class="search-subtitle">Знайдені товари за вашим запитом</p>
+            <div class="search-query" id="search-query-display"></div>
+            <div class="search-stats" id="search-stats"></div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="search-results">
+        <div class="results-container">
+            <div id="search-results-container">
+                <!-- Результати будуть додані через JavaScript -->
+            </div>
+            
+            <div class="back-to-catalog">
+                <a href="catalog.html" class="back-btn">← Повернутися до каталогу</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Вікна двері</h4>
+                    <p>Якісні двері та вікна для вашого дому</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 123 456 789</p>
+                    <p>Email: info@ms-doors.com.ua</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Адреса</h4>
+                    <p>Олександрія, Кіровоградська область</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-database.js"></script>
+    <script src="search-autocomplete.js"></script>
+    <script>
+        // Отримуємо параметри з URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q') || '';
+        
+        // Відображаємо запит пошуку
+        document.getElementById('search-query-display').textContent = `"${searchQuery}"`;
+        
+        // Виконуємо пошук
+        const searchResults = searchProducts(searchQuery);
+        
+        // Відображаємо статистику
+        const statsElement = document.getElementById('search-stats');
+        if (searchResults.length === 0) {
+            statsElement.textContent = 'Товари не знайдені';
+        } else {
+            statsElement.textContent = `Знайдено ${searchResults.length} товарів`;
+        }
+        
+        // Відображаємо результати
+        const resultsContainer = document.getElementById('search-results-container');
+        
+        if (searchResults.length === 0) {
+            resultsContainer.innerHTML = `
+                <div class="no-results">
+                    <h3>Товари не знайдені</h3>
+                    <p>На жаль, за вашим запитом "<strong>${searchQuery}</strong>" товари не знайдені.</p>
+                    <p>Спробуйте використати інші ключові слова або перевірте правильність написання.</p>
+                    
+                    <div class="search-suggestions">
+                        <h4>Популярні пошукові запити:</h4>
+                        <div class="suggestion-list">
+                            <span class="suggestion-item" onclick="searchSuggestion('двері')">двері</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('вікна')">вікна</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('дерево')">дерево</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('метал')">метал</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('скло')">скло</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('розсувні')">розсувні</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('вхідні')">вхідні</span>
+                            <span class="suggestion-item" onclick="searchSuggestion('мдф')">мдф</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            const resultsHTML = searchResults.map(product => `
+                <div class="result-card">
+                    <img src="${product.image}" alt="${product.name}" class="result-image">
+                    <div class="result-info">
+                        <h3 class="result-name">${product.name}</h3>
+                        <div class="result-category">${getCategoryName(product.category)}</div>
+                        <div class="result-description">${product.description}</div>
+                        <div class="result-features">
+                            ${product.features.map(feature => `<span class="result-feature">${feature}</span>`).join('')}
+                        </div>
+                        <div class="result-footer">
+                            <div class="result-price">${product.price.toLocaleString('uk-UA')} ₴</div>
+                            <div class="result-rating">
+                                <span>${'★'.repeat(product.rating)}${'☆'.repeat(5 - product.rating)}</span>
+                                <span>(${product.reviews})</span>
+                            </div>
+                        </div>
+                        <a href="catalog.html" class="result-btn">Переглянути в каталозі</a>
+                    </div>
+                </div>
+            `).join('');
+            
+            resultsContainer.innerHTML = `
+                <div class="results-grid">
+                    ${resultsHTML}
+                </div>
+            `;
+        }
+        
+        // Функція для отримання назви категорії
+        function getCategoryName(category) {
+            const categoryNames = {
+                'interior-doors': 'Міжкімнатні двері',
+                'entrance-doors': 'Вхідні двері',
+                'windows': 'Вікна',
+                'sliding-doors': 'Розсувні двері'
+            };
+            return categoryNames[category] || category;
+        }
+        
+        // Функція для пошуку з підказок
+        function searchSuggestion(suggestion) {
+            const searchUrl = `search-results.html?q=${encodeURIComponent(suggestion)}`;
+            window.location.href = searchUrl;
+        }
+        
+        // Функція для пошуку з поля вводу на сторінці результатів
+        function performSearchFromResults() {
+            const searchInput = document.getElementById('search-input');
+            const query = searchInput.value.trim();
+            
+            if (query.length < 2) {
+                alert('Будь ласка, введіть мінімум 2 символи для пошуку');
+                return;
+            }
+            
+            const searchUrl = `search-results.html?q=${encodeURIComponent(query)}`;
+            window.location.href = searchUrl;
+        }
+        
+        // Підтримка Enter в полі пошуку
+        document.getElementById('search-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearchFromResults();
+            }
+        });
+        
+        // Ініціалізуємо автодоповнення для сторінки результатів пошуку
+        if (document.getElementById('search-input')) {
+            window.searchResultsAutocomplete = new SearchAutocomplete('search-input', {
+                minLength: 2,
+                maxResults: 5,
+                debounceDelay: 300
+            });
+        }
+    </script>
+</body>
+</html>

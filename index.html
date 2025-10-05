@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікна двері міжкімнатні</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Вікна двері</h1>
+                    <span class="logo-subtitle">Вікна Двері Style DOORS</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Пошук товарів..." id="main-search">
+                    <button class="search-btn" onclick="performSearch()">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1915&q=80" 
+                 alt="Сучасні міжкімнатні двері та дизайн інтер'єру" 
+                 class="hero-image">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2 class="hero-title">Вікна Двері</h2>
+                    <p class="hero-subtitle">Сучасні двері та вікна для вашого дому</p>
+                    <button class="hero-cta" onclick="window.location.href='catalog.html'">Дивитися каталог</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">Новинки</h2>
+            <div class="products-carousel">
+                <button class="carousel-btn prev">‹</button>
+                <div class="products-container">
+                    <div class="product-item" data-product-id="1" data-price="74400">
+                        <div class="product-image">
+                            <img src="assets/Dvery1.PNG" alt="Двері міжкімнатні DENVER">
+                        </div>
+                        <div class="product-info">
+                            <h3>Двері міжкімнатні DENVER</h3>
+                            <div class="price">74 400 ₴</div>
+                            <div class="product-actions">
+                                <button class="details-btn" onclick="window.location.href='catalog.html'">Детальніше</button>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-product-id="2" data-price="49600">
+                        <div class="product-image">
+                            <img src="assets/Dvery2.PNG" alt="Двері міжкімнатні CLASSIC">
+                        </div>
+                        <div class="product-info">
+                            <h3>Двері міжкімнатні CLASSIC</h3>
+                            <div class="price">49 600 ₴</div>
+                            <div class="product-actions">
+                                <button class="details-btn" onclick="window.location.href='catalog.html'">Детальніше</button>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-product-id="6" data-price="63200">
+                        <div class="product-image">
+                            <img src="assets/Dvery3.PNG" alt="Двері скляні PANORAMA">
+                        </div>
+                        <div class="product-info">
+                            <h3>Двері міжкімнатні DENVER</h3>
+                            <div class="price">63 200 ₴</div>
+                            <div class="product-actions">
+                                <button class="details-btn" onclick="window.location.href='catalog.html'">Детальніше</button>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-product-id="7" data-price="113600">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400/E8F5E8/228B22?text=SLIDE" alt="Розсувні двері MODERN SLIDE">
+                        </div>
+                        <div class="product-info">
+                            <h3>Розсувні двері MODERN SLIDE</h3>
+                            <div class="price">113 600 ₴</div>
+                            <div class="product-actions">
+                                <button class="details-btn" onclick="window.location.href='catalog.html'">Детальніше</button>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-product-id="11" data-price="84000">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400/F0E68C/2F4F4F?text=WINDOW" alt="Вікна дерев'яні ECO">
+                        </div>
+                        <div class="product-info">
+                            <h3>Двері міжкімнатні DENVER</h3>
+                            <div class="price">84 000 ₴</div>
+                            <div class="product-actions">
+                                <button class="details-btn" onclick="window.location.href='catalog.html'">Детальніше</button>
+                                <button class="buy-now-btn" onclick="openOrderForm(this)">Купувати</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Наші категорії</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Міжкімнатні двері">
+                    </div>
+                    <h3>Міжкімнатні двері</h3>
+                    <p>Сучасні та елегантні рішення для вашого інтер'єру</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Вікна">
+                    </div>
+                    <h3>Вікна</h3>
+                    <p>Якісні вікна з дерев'яним та метало-дерев'яним профілем</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Вхідні двері">
+                    </div>
+                    <h3>Вхідні двері</h3>
+                    <p>Надійні та безпечні вхідні двері для вашого дому</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Вікна двері</h4>
+                    <p>Якісні двері та вікна для вашого дому</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 222 11 02</p>
+                    <p>Email: kobelenko@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Адреса</h4>
+                    <p>вул. Калініна, 63</p>
+                    <p>Олександрія, Кіровоградська область, 28000</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Акаунт</h4>
+                    <p><a href="admin.html" style="color: #ffd700; text-decoration: none;">🔧 Адмін панель</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-database.js"></script>
+    <script src="search-autocomplete.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Check if user is logged in and show cabinet link
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedUser = localStorage.getItem('currentUser');
+            const cabinetLink = document.getElementById('cabinetLink');
+            
+            if (savedUser && cabinetLink) {
+                cabinetLink.style.display = 'block';
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

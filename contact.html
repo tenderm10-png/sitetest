@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Вікна двері міжкімнатні</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">Вікна двері</a></h1>
+                    <span class="logo-subtitle">Вікна Двері Style DOORS</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Пошук товарів..." id="contact-search">
+                    <button class="search-btn" onclick="performContactSearch()">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Header -->
+    <section class="contact-header">
+        <div class="container">
+            <div class="contact-intro">
+                <div class="contact-breadcrumb">
+                    <a href="index.html">Головна</a> / <span>Контакти</span>
+                </div>
+                <h1 class="contact-title">Зв'яжіться з нами</h1>
+                <p class="contact-subtitle">Ми завжди готові допомогти вам з вибором та встановленням якісних дверей та вікон</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info Section -->
+                <div class="contact-info-section">
+                    <h2>Контактна інформація</h2>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">📞</div>
+                            <h3>Телефон</h3>
+                            <p>+380 99 222 11 02</p>
+                            <p>+380 68 910 01 70</p>
+                            <p class="contact-hours">Пн-Пт: 9:00-17:00<br>Сб: 9:00-14:00</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">✉️</div>
+                            <h3>Email</h3>
+                            <p>kobelenko@gmail.com</p>
+                            <p class="contact-hours">Відповідаємо протягом 24 годин</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <h3>Адреса</h3>
+                            <p>вул. Калініна, 63</p>
+                            <p>Олександрія, Кіровоградська область, 28000</p>
+                            <p class="contact-hours">Покажемо на мапі нижче</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">⏰</div>
+                            <h3>Робочі години</h3>
+                            <p>Пн-Пт: 9:00-17:00</p>
+                            <p>Субота: 9:00-14:00</p>
+                            <p class="contact-hours">Неділя: вихідний</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="contact-form-section">
+                    <h2>Напишіть нам</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ім'я *</label>
+                            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+380 XX XXX XX XX">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема повідомлення *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Оберіть тему</option>
+                                <option value="consultation">Консультація</option>
+                                <option value="order">Замовлення</option>
+                                <option value="warranty">Гарантія</option>
+                                <option value="delivery">Доставка</option>
+                                <option value="other">Інше</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Повідомлення *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Опишіть ваше питання або замовлення..." required></textarea>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy" required>
+                                <span>Я погоджуюся з обробкою персональних даних *</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-btn">Відправити повідомлення</button>
+                    </form>
+                </div>
+
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h2>Ми на мапі</h2>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=вул.+Калініна,+63,+Олександрія,+Кіровоградська+область,+28000,+Україна&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Наше местоположение в Александрии, ул. Калинина 63">
+                        </iframe>
+                        <div style="margin-top: 10px; text-align: center;">
+                            <p style="color: #ffd700; font-weight: 600; margin-bottom: 8px;">📍 Червона мітка показує нашу точну адресу</p>
+                            <p style="color: #e5e5e5; font-size: 0.9rem;">вул. Калініна, 63, Олександрія, Кіровоградська область, 28000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Часті питання</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Скільки часу займає виготовлення дверей?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Стандартний термін виготовлення міжкімнатних дверей становить 7-14 днів, залежно від складності конструкції та обраного матеріалу.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Чи надаєте ви гарантію на продукцію?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Так, ми надаємо гарантію на всю нашу продукцію: 2 роки на двері та 5 років на вікна. Гарантія покриває виробничі дефекти.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Чи здійснюєте доставку по всій Україні?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Так, ми доставляємо товари по всій Україні. Доставка по Києву безкоштовна при замовленні від 10 000 грн. Вартість доставки в інші міста розраховується індивідуально.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Які способи оплати ви приймаєте?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Ми приймаємо оплату готівкою, банківським переказом, карткою через термінал, а також можлива оплата частинами через ПриватБанк.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Чи можна заміряти двері на дому?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Так, наші спеціалісти можуть виїхати на замір безкоштовно. Зазвичай це займає 30-60 хвилин, залежно від кількості дверей.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Вікна двері</h4>
+                    <p>Якісні двері та вікна для вашого дому</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 222 11 02</p>
+                    <p>Email: kobelenko@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Адреса</h4>
+                    <p>вул. Калініна, 63, Олександрія</p>
+                    <p>Кіровоградська область, 28000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-database.js"></script>
+    <script src="search-autocomplete.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
