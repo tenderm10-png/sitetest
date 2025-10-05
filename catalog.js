@@ -611,9 +611,29 @@ class CatalogManager {
     }
 }
 
+// Handle broken images for catalog
+function handleCatalogImageError(img) {
+    img.style.background = 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)';
+    img.style.display = 'flex';
+    img.style.alignItems = 'center';
+    img.style.justifyContent = 'center';
+    img.style.color = '#1a1a1a';
+    img.style.fontSize = '0.8rem';
+    img.style.fontWeight = '600';
+    img.style.borderRadius = '8px';
+    img.alt = 'Фото товару';
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMWExYTFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+0KTQvtGC0L7QvSDQvtC00L7RgNC+0YHRjDwvdGV4dD48L3N2Zz4=';
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.catalogManager = new CatalogManager();
+    
+    // Add error handlers for all catalog images
+    const catalogImages = document.querySelectorAll('.product-card img, .product-image img');
+    catalogImages.forEach(img => {
+        img.addEventListener('error', () => handleCatalogImageError(img));
+    });
     
     // Показуємо всі товари при завантаженні
     setTimeout(() => {

@@ -309,6 +309,20 @@ function initProductModals() {
     });
 }
 
+// Handle broken images
+function handleImageError(img) {
+    img.style.background = 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)';
+    img.style.display = 'flex';
+    img.style.alignItems = 'center';
+    img.style.justifyContent = 'center';
+    img.style.color = '#1a1a1a';
+    img.style.fontSize = '0.8rem';
+    img.style.fontWeight = '600';
+    img.style.borderRadius = '8px';
+    img.alt = 'Фото товару';
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMWExYTFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+0KTQvtGC0L7QvSDQvtC00L7RgNC+0YHRjDwvdGV4dD48L3N2Zz4=';
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     addAnimationStyles();
@@ -317,6 +331,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initScrollAnimations();
     initProductModals();
+    
+    // Add error handlers for all product images
+    const productImages = document.querySelectorAll('.product-image img, .product-item img');
+    productImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
     
     // Ініціалізуємо автодоповнення для головної сторінки
     if (document.getElementById('main-search')) {
