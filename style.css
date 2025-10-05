@@ -1247,12 +1247,25 @@ section {
         padding: 0 15px;
     }
     
-    /* Fix browser UI overlap using viewport units */
+    /* Fixed header for mobile */
     .header {
-        padding-top: max(60px, 10vh);
-        padding-bottom: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        border-bottom: 2px solid #ffd700;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     
+    /* Add top padding to body to account for fixed header */
+    body {
+        padding-top: 120px;
+    }
+    
+    /* Fix browser UI overlap using viewport units */
     .catalog-header {
         padding-top: max(120px, 15vh);
         padding-bottom: 60px;
@@ -1269,41 +1282,41 @@ section {
     }
     
     .header-content {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
     }
     
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin: 0;
     }
     
     .logo-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        margin: 0;
     }
     
     .nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
     }
     
     .nav a {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+        font-size: 0.8rem;
+        padding: 6px 8px;
+        white-space: nowrap;
     }
     
-    .search-bar input {
-        width: 100%;
-        max-width: 250px;
-        font-size: 0.9rem;
+    .search-bar {
+        display: none; /* Hide search on mobile to save space */
     }
     
-    .search-btn {
-        padding: 8px;
-    }
-    
-    /* Product cards mobile optimization */
+    /* Product cards mobile optimization - consistent sizes */
     .products-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1312,6 +1325,7 @@ section {
     .product-card {
         margin: 0 auto;
         max-width: 350px;
+        height: auto;
     }
     
     .product-image {
@@ -1392,24 +1406,28 @@ section {
         padding: 0 10px;
     }
     
-    /* Fix browser UI overlap for small screens */
+    /* Fixed header for small mobile screens */
     .header {
-        padding-top: max(80px, 12vh);
-        padding-bottom: 15px;
+        padding: 10px 0;
+    }
+    
+    /* Adjust body padding for smaller screens */
+    body {
+        padding-top: 100px;
     }
     
     .catalog-header {
-        padding-top: max(140px, 18vh);
+        padding-top: max(100px, 12vh);
         padding-bottom: 50px;
     }
     
     .about-header {
-        padding-top: max(140px, 18vh);
+        padding-top: max(100px, 12vh);
         padding-bottom: 50px;
     }
     
     .contact-header {
-        padding-top: max(140px, 18vh);
+        padding-top: max(100px, 12vh);
         padding-bottom: 50px;
     }
     
@@ -1422,17 +1440,12 @@ section {
     }
     
     .nav a {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+        font-size: 0.75rem;
+        padding: 5px 8px;
     }
     
     .search-bar {
-        width: 100%;
-    }
-    
-    .search-bar input {
-        font-size: 0.8rem;
-        padding: 8px 12px;
+        display: none; /* Keep search hidden on small screens too */
     }
     
     .product-card {

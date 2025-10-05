@@ -81,29 +81,29 @@
     
     .products-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
     
     .product-card {
-        max-width: 400px;
+        max-width: 350px;
         margin: 0 auto;
     }
     
     .product-image {
-        height: 220px;
+        height: 200px;
     }
     
     .product-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .product-price {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .buy-now-btn {
-        padding: 12px 20px;
-        font-size: 0.95rem;
+        padding: 10px 16px;
+        font-size: 0.9rem;
     }
 }
 
@@ -122,7 +122,7 @@
     
     .products-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
     
     .product-card {
@@ -130,20 +130,20 @@
     }
     
     .product-image {
-        height: 200px;
+        height: 180px;
     }
     
     .product-name {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .product-price {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .buy-now-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
 }
 
